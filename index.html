@@ -5,130 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>심윤석 - GM TCP DRE 포트폴리오</title>
   <style>
-    /* 기본 스타일 */
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f4f4f4;
       color: #333;
-      line-height: 1.6;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    
-    /* Hero section */
-    .hero {
-      background: url('https://upload.wikimedia.org/wikipedia/commons/9/90/GM_Renaissance_Center.jpg') no-repeat center center/cover;
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-align: center;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-    }
-
-    /* Navigation */
-    nav {
+    header {
       background-color: #333;
+      color: #fff;
+      padding: 2rem;
       text-align: center;
     }
-    nav a {
-      display: inline-block;
-      padding: 1rem;
+    #content section {
+      display: none;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #content section.active {
+      display: block;
+    }
+    .buttons {
+      text-align: center;
+      margin: 1rem;
+    }
+    .buttons button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #333;
       color: #fff;
+      cursor: pointer;
+      border-radius: 4px;
       transition: background 0.3s;
     }
-    nav a:hover {
+    .buttons button:hover {
       background-color: #555;
     }
-
-    /* Sections */
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Footer */
     footer {
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 1rem 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+      padding: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
+  <header>
     <h1>심윤석</h1>
     <p>GM TCP DRE</p>
+  </header>
+
+  <div class="buttons">
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showSection('resume')">Resume</button>
+    <button onclick="showSection('contact')">Contact</button>
   </div>
 
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div id="content">
+    <section id="about" class="active">
+      <h2>About Me</h2>
+      <p>안녕하세요! 저는 GM에서 TCP DRE로 활동 중인 심윤석입니다. 사용자 중심의 인터페이스와 고품질 소프트웨어 개발을 추구합니다.</p>
+    </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>안녕하세요! 저는 GM에서 TCP DRE로 활동 중인 심윤석입니다. 사용자 중심의 인터페이스와 고품질 소프트웨어 개발을 추구합니다.</p>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>프로젝트 1:</strong> GM 차량 네트워크 개선 프로젝트</li>
+        <li><strong>프로젝트 2:</strong> TCP 통신 모듈 최적화</li>
+        <li><strong>프로젝트 3:</strong> 차량용 OTA 시스템 구축</li>
+      </ul>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>프로젝트 1:</strong> GM 차량 네트워크 개선 프로젝트</li>
-      <li><strong>프로젝트 2:</strong> TCP 통신 모듈 최적화</li>
-      <li><strong>프로젝트 3:</strong> 차량용 OTA 시스템 구축</li>
-    </ul>
-  </section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <p><strong>학력:</strong> ○○대학교, 컴퓨터공학과 졸업</p>
+      <p><strong>경력:</strong> GM, TCP DRE (2021~현재)</p>
+    </section>
 
-  <section id="resume">
-    <h2>Resume</h2>
-    <p><strong>학력:</strong> ○○대학교, 컴퓨터공학과 졸업</p>
-    <p><strong>경력:</strong> GM, TCP DRE (2021~현재)</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">https://github.com/yourgithub</a></p>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: your.email@example.com</p>
+      <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">https://github.com/yourgithub</a></p>
+    </section>
+  </div>
 
   <footer>
     &copy; 2025 심윤석. All rights reserved.
   </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('#content section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
